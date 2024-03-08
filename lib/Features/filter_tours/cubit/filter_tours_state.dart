@@ -4,3 +4,4 @@ part of 'filter_tours_cubit.dart';
 sealed class FilterToursState {}
 
 final class FilterToursInitial extends FilterToursState {}
+final class FilterToursSetState extends FilterToursState {}
