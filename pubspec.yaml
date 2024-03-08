@@ -32,8 +32,11 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.4
+  flutter_rating_bar: ^4.0.1
+  flutter_svg: ^2.0.10+1
   fluttertoast: ^8.2.4
   go_router: ^13.2.0
+  meta: ^1.11.0
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -65,8 +68,8 @@ flutter:
   fonts:
     - family: Rufina
       fonts:
-        - asset: fonts/Rufina-Bold.ttf
-        - asset: fonts/Rufina-Regular.ttf
+        - asset: assets/fonts/Rufina-Bold.ttf
+        - asset: assets/fonts/Rufina-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

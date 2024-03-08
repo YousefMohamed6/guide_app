@@ -10,6 +10,5 @@ abstract class ColorManager {
   static const Color toursContainer = Color(0xff869CC3);
   static const Color privateToursContainer = Color(0xffD9D9D9);
   static const Color addressColor = Color(0xff63687A);
-  static const Color hartBackgroundColor = Color(0xff63687A);
-  
+  static const Color hartBackgroundColor = Color(0xffD9D9D9);
 }

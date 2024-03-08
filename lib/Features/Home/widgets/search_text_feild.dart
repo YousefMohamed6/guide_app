@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:guide_app/core/uitls/colors_manager.dart';
+import 'package:guide_app/core/uitls/styles_manager.dart';
 import 'package:guide_app/core/uitls/values_manager.dart';
 
 class SearchTextField extends StatelessWidget {
@@ -42,6 +43,7 @@ class SearchTextField extends StatelessWidget {
             icon: const Icon(Icons.mic),
           ),
           hintText: "Search",
+          hintStyle: StyleManager.textStyle14,
         ),
       ),
     );
