@@ -8,40 +8,52 @@ import 'package:guide_app/core/uitls/styles_manager.dart';
 import 'package:guide_app/core/uitls/values_manager.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard(
-      {super.key,
-      required this.title,
-      required this.address,
-      required this.width,
-      required this.onTap});
+  const CustomCard({
+    super.key,
+    required this.title,
+    required this.address,
+    required this.imagePath,
+    required this.onTap,
+    this.price,
+  });
   final String title;
+  final String? price;
   final String address;
-  final double width;
+  final String imagePath;
   final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Card(
-        clipBehavior: Clip.antiAlias,
         child: Column(
           children: [
-            CustomImage(width: width),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            CustomImage(
+              imagePath: imagePath,
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TitleText(title: title),
-                    const SizedBox(height: HightManager.h4),
-                    AddressText(address: address),
+                    const RatingView(
+                      rate: 4.4,
+                    ),
                   ],
                 ),
-                const RatingView(
-                  rate: 4.4,
+                const SizedBox(height: HightManager.h4),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AddressText(address: address),
+                    price == null ? const SizedBox() : PriceText(price: price)
+                  ],
                 ),
+                const SizedBox(height: HightManager.h16),
               ],
             ),
           ],
@@ -58,9 +70,7 @@ class AddressText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(
-          AssetsManager.locationOutline,
-        ),
+        SvgPicture.asset(AssetsManager.locationOutline),
         const SizedBox(width: WidthManager.w4),
         Text(
           address,
@@ -86,5 +96,14 @@ class TitleText extends StatelessWidget {
         color: ColorManager.secandry,
       ),
     );
+  }
+}
+
+class PriceText extends StatelessWidget {
+  const PriceText({super.key, required this.price});
+  final String? price;
+  @override
+  Widget build(BuildContext context) {
+    return Text(price! + r"$ /person");
   }
 }

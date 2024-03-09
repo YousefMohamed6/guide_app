@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guide_app/core/uitls/colors_manager.dart';
 
 class SliderView extends StatefulWidget {
   const SliderView({super.key});
@@ -16,7 +17,7 @@ class _SliderViewState extends State<SliderView> {
       min: 0,
       divisions: 5,
       max: 500,
-      activeColor: Colors.black,
+      activeColor: ColorManager.black,
       thumbColor: Colors.white,
       onChanged: (value) {
         setState(() {

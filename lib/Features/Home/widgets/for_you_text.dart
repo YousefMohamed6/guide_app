@@ -8,7 +8,7 @@ class ForYouText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-    
+      
       "For you",
       style: StyleManager.textStyle20.copyWith(
         color: ColorManager.primary,

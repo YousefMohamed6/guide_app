@@ -8,29 +8,34 @@ class CategoryContainer extends StatelessWidget {
     required this.text,
     required this.color,
     required this.icon,
+    required this.onTap,
   });
   final String text;
   final Color color;
   final Widget icon;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(PaddingManager.p16),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(
-          ValuesManager.borderRadius,
-        ),
-      ),
-      child: Row(
-        children: [
-          icon,
-          const SizedBox(width: WidthManager.w8),
-          Text(
-            text,
-            style: StyleManager.textStyle14,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(PaddingManager.p16),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(
+            ValuesManager.borderRadius,
           ),
-        ],
+        ),
+        child: Row(
+          children: [
+            icon,
+            const SizedBox(width: WidthManager.w8),
+            Text(
+              text,
+              style: StyleManager.textStyle14,
+            ),
+          ],
+        ),
       ),
     );
   }

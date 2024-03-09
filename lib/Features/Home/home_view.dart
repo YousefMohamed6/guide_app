@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:guide_app/Features/Home/controller/home_cubit.dart';
 import 'package:guide_app/Features/Home/widgets/home_view_body.dart';
-import 'package:guide_app/Features/Home/widgets/search_appbar.dart';
-import 'package:guide_app/core/uitls/colors_manager.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -9,12 +9,11 @@ class HomeView extends StatelessWidget {
   static const String routeName = "Home";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const SearchFiltering(),
-        backgroundColor: ColorManager.primary,
+    return BlocProvider(
+      create: (context) => HomeCubit(),
+      child: const Scaffold(
+        body: HomeViewBody(),
       ),
-      body: const HomeViewBody(),
     );
   }
 }

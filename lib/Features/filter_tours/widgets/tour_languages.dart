@@ -15,8 +15,8 @@ class TourLanguages extends StatelessWidget {
         bool isFrench = BlocProvider.of<FilterToursCubit>(context).isFrench;
         bool isSpanish = BlocProvider.of<FilterToursCubit>(context).isSpanish;
         return Card(
-          borderOnForeground: true,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ChooseItem(
                 text: "Arabic",

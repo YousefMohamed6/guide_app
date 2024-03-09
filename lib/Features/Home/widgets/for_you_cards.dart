@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:guide_app/Features/Home/widgets/custom_card.dart';
+import 'package:guide_app/core/uitls/assets_manager.dart';
 
 class ForYouCards extends StatelessWidget {
   const ForYouCards({super.key});
@@ -8,17 +10,19 @@ class ForYouCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.35,
+      height: MediaQuery.sizeOf(context).height * 0.32,
       child: ListView.builder(
+        padding: EdgeInsets.zero,
         itemCount: 4,
-        shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return CustomCard(
+            imagePath: AssetsManager.logo,
             title: "Spotless Nile View.",
             address: 'Cairo,Egypt',
-            width: MediaQuery.sizeOf(context).width * 0.60,
-            onTap: (){},
+            onTap: () {
+              debugPrint("Pressed");
+            },
           );
         },
       ),

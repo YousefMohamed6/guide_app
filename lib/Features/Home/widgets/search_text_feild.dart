@@ -12,7 +12,7 @@ class SearchTextField extends StatelessWidget {
     var focusNode = FocusNode();
     return Expanded(
       child: TextFormField(
-        style: const TextStyle(height: 0.1),
+        style: const TextStyle(height: 0.75),
         cursorHeight: 24,
         onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
         focusNode: focusNode,
@@ -26,7 +26,7 @@ class SearchTextField extends StatelessWidget {
               Radius.circular(ValuesManager.borderRadius),
             ),
           ),
-          enabledBorder: const OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.white),
             borderRadius: BorderRadius.all(
               Radius.circular(ValuesManager.borderRadius),

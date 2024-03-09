@@ -21,6 +21,7 @@ class TourCatagorys extends StatelessWidget {
             BlocProvider.of<FilterToursCubit>(context).isNightLife;
         return Card(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ChooseItem(
                 text: "Walking Tour",

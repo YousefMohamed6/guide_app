@@ -1,5 +1,7 @@
 abstract class FontFamily {
-  static const String fontFamily = 'Rufina';
+  static const String rufina = 'Rufina';
+  static const String sora = 'Sora';
+  static const String poppins = 'Poppins';
 }
 
 abstract class FontsSize {

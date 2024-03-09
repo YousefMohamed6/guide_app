@@ -11,28 +11,28 @@ class FilterToursBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return ListView(
+      padding: const EdgeInsets.symmetric(horizontal: PaddingManager.p8),
       children: [
-        const SizedBox(height: HightManager.h4),
+        const SizedBox(height: HightManager.h8),
         Text(
           "Budget",
           style: StyleManager.textStyle20.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(height: HightManager.h4),
+        const SizedBox(height: HightManager.h8),
         const BudgetView(),
-        const SizedBox(height: HightManager.h4),
+        const SizedBox(height: HightManager.h8),
         Text(
           "Tour Language",
           style: StyleManager.textStyle20.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(height: HightManager.h4),
+        const SizedBox(height: HightManager.h8),
         const TourLanguages(),
-        const SizedBox(height: HightManager.h4),
+        const SizedBox(height: HightManager.h8),
         Text(
           "Tour Category",
           style: StyleManager.textStyle20.copyWith(
@@ -40,7 +40,8 @@ class FilterToursBody extends StatelessWidget {
           ),
         ),
         const TourCatagorys(),
-        const Expanded(child: SearchButton()),
+        const SizedBox(height: HightManager.h8),
+        const SearchButton(),
       ],
     );
   }
