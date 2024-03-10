@@ -13,8 +13,8 @@ class SearchFiltering extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: PaddingManager.p16),
-      margin: const EdgeInsets.symmetric(horizontal: MarginManager.m4),
-      height: MediaQuery.sizeOf(context).height * 0.15,
+     // margin: const EdgeInsets.symmetric(horizontal: MarginManager.m4),
+      height: MediaQuery.sizeOf(context).height * 0.20,
       decoration: const BoxDecoration(
         color: ColorManager.primary,
         borderRadius: BorderRadius.only(
@@ -30,6 +30,7 @@ class SearchFiltering extends StatelessWidget {
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          SizedBox(width: 20,),
           SearchTextField(),
           FilterIcon(),
         ],
