@@ -19,14 +19,9 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
-          Stack(children: [   SearchFiltering(),    Padding(
-            padding: const EdgeInsets.only(top: 140.0),
-            child: ToursCategorys(),
-          ),],),
-        
+          const SearchFiltering(),
           const SizedBox(height: HightManager.h4),
-       
+          const ToursCategorys(),
           const ForYouText(),
           const ForYouCards(),
           const SizedBox(height: HightManager.h16),

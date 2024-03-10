@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:guide_app/Features/Home/widgets/custom_image.dart';
 import 'package:guide_app/Features/Home/widgets/rating_view.dart';
@@ -26,63 +24,39 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(22),
-              color: Color.fromARGB(200, 225, 222, 222)),
-          child: Card(
-            elevation: 0,
-            child: Column(
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        child: Column(
+          children: [
+            CustomImage(
+              imagePath: imagePath,
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 12),
-                  child: CustomImage(
-                    imagePath: imagePath,
-                  ),
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: 12, right: 12, top: 12, bottom: 12),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          TitleText(title: title),
-                          SizedBox(
-                            width: 90,
-                          ),
-                          RatingView(
-                            rate: 4.4,
-                          ),
-                        ],
-                      ),
+                    TitleText(title: title),
+                    const RatingView(
+                      rate: 4.4,
                     ),
-                    const SizedBox(height: HightManager.h4),
-                    Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8, right: 180),
-                          child: AddressText(address: address),
-                        ),
-                        price == null
-                            ? const SizedBox()
-                            : PriceText(price: price)
-                      ],
-                    ),
-                    const SizedBox(height: HightManager.h16),
                   ],
                 ),
+                const SizedBox(height: HightManager.h4),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AddressText(address: address),
+                    price == null ? const SizedBox() : PriceText(price: price)
+                  ],
+                ),
+                const SizedBox(height: HightManager.h16),
               ],
             ),
-          ),
+          ],
         ),
       ),
     );

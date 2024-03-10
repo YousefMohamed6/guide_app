@@ -19,7 +19,6 @@ class CategoryContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 180,
         padding: const EdgeInsets.all(PaddingManager.p16),
         decoration: BoxDecoration(
           color: color,
@@ -27,7 +26,7 @@ class CategoryContainer extends StatelessWidget {
             ValuesManager.borderRadius,
           ),
         ),
-        child: Row(mainAxisAlignment: MainAxisAlignment.center,
+        child: Row(
           children: [
             icon,
             const SizedBox(width: WidthManager.w8),
