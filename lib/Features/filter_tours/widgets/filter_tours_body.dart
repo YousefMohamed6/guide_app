@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:guide_app/Features/filter_tours/widgets/budget_view.dart';
-import 'package:guide_app/Features/filter_tours/widgets/search_button.dart';
 import 'package:guide_app/Features/filter_tours/widgets/tour_categorys.dart';
 import 'package:guide_app/Features/filter_tours/widgets/tour_languages.dart';
 import 'package:guide_app/core/uitls/styles_manager.dart';
 import 'package:guide_app/core/uitls/values_manager.dart';
+import 'package:guide_app/core/widgets/search_button.dart';
 
 class FilterToursBody extends StatelessWidget {
   const FilterToursBody({super.key});
@@ -41,7 +42,11 @@ class FilterToursBody extends StatelessWidget {
         ),
         const TourCatagorys(),
         const SizedBox(height: HightManager.h8),
-        const SearchButton(),
+        SearchButton(
+          onPressed: () {
+            context.pop();
+          },
+        ),
       ],
     );
   }

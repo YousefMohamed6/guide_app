@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:guide_app/Features/Home/widgets/custom_card.dart';
+import 'package:guide_app/Features/tour_page/tour_page_view.dart';
 import 'package:guide_app/core/uitls/assets_manager.dart';
 
 class RecomendedCards extends StatelessWidget {
@@ -9,6 +11,7 @@ class RecomendedCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.zero,
+      physics: const NeverScrollableScrollPhysics(),
       controller: controller,
       itemCount: 4,
       shrinkWrap: true,
@@ -19,7 +22,9 @@ class RecomendedCards extends StatelessWidget {
           price: "75",
           title: "Spotless Nile View.",
           address: 'Cairo,Egypt',
-          onTap: () {},
+          onTap: () {
+            context.push(TourPageView.routePath);
+          },
         );
       },
     );

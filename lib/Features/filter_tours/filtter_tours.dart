@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:guide_app/Features/filter_tours/cubit/filter_tours_cubit.dart';
+import 'package:guide_app/Features/filter_tours/controller/filter_tours_cubit.dart';
 import 'package:guide_app/Features/filter_tours/widgets/filter_tours_body.dart';
 
 class FilterToursView extends StatelessWidget {

@@ -10,10 +10,12 @@ class NewListButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: () async {
-        await showModalBottomSheet(
-            context: context,
-            isScrollControlled: true,
-            builder: ((context) => const NewListView()));
+        await showDialog(
+          context: context,
+          builder: (context) => const AlertDialog(
+            content: NewListView(),
+          ),
+        );
       },
       padding: EdgeInsets.zero,
       child: Text(

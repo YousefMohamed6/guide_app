@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:guide_app/core/uitls/fonts_manager.dart';
 
 abstract class StyleManager {
+  static const TextStyle textStyle12 = TextStyle(
+    fontSize: FontsSize.s12,
+    fontFamily: FontFamily.rufina,
+    fontWeight: FontWeight.w400,
+  );
   static const TextStyle textStyle14 = TextStyle(
     fontSize: FontsSize.s14,
     fontFamily: FontFamily.rufina,

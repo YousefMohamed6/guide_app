@@ -6,7 +6,7 @@ class RatingView extends StatelessWidget {
   final double rate;
   @override
   Widget build(BuildContext context) {
-    double iconSize = 16;
+    double iconSize = 20;
     return Row(
       children: [
         Icon(

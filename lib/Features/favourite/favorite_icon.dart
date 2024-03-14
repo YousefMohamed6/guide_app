@@ -14,16 +14,12 @@ class _FavoriteIconState extends State<FavoriteIcon> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(
-        right: MarginManager.m8,
-        top: MarginManager.m8,
-      ),
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
           ValuesManager.borderRadius,
         ),
-        color: ColorManager.hartBackgroundColor,
+        color: ColorManager.grey,
       ),
       child: IconButton(
         icon: const Icon(
@@ -33,7 +29,6 @@ class _FavoriteIconState extends State<FavoriteIcon> {
         onPressed: () async {
           await showModalBottomSheet(
             context: context,
-            isScrollControlled: true,
             elevation: 0,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(

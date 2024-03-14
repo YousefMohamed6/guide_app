@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:guide_app/Features/Home/widgets/custom_image.dart';
-import 'package:guide_app/Features/Home/widgets/rating_view.dart';
-import 'package:guide_app/core/uitls/assets_manager.dart';
-import 'package:guide_app/core/uitls/colors_manager.dart';
-import 'package:guide_app/core/uitls/styles_manager.dart';
+import 'package:guide_app/Features/Home/widgets/for_you_details.dart';
+import 'package:guide_app/Features/Home/widgets/recomended_details.dart';
 import 'package:guide_app/core/uitls/values_manager.dart';
 
 class CustomCard extends StatelessWidget {
@@ -27,83 +24,29 @@ class CustomCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Card(
-        child: Column(
-          children: [
-            CustomImage(
-              imagePath: imagePath,
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TitleText(title: title),
-                    const RatingView(
-                      rate: 4.4,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: PaddingManager.p16,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomImage(imagePath: imagePath),
+              const SizedBox(height: HightManager.h8),
+              price == null
+                  ? ForYouDetials(
+                      title: title,
+                      address: address,
+                    )
+                  : RecomendedDetails(
+                      title: title,
+                      address: address,
+                      price: price!,
                     ),
-                  ],
-                ),
-                const SizedBox(height: HightManager.h4),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AddressText(address: address),
-                    price == null ? const SizedBox() : PriceText(price: price)
-                  ],
-                ),
-                const SizedBox(height: HightManager.h16),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class AddressText extends StatelessWidget {
-  const AddressText({super.key, required this.address});
-  final String address;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SvgPicture.asset(AssetsManager.locationOutline),
-        const SizedBox(width: WidthManager.w4),
-        Text(
-          address,
-          textAlign: TextAlign.start,
-          style: StyleManager.textStyle14.copyWith(
-            color: ColorManager.addressColor,
+            ],
           ),
         ),
-      ],
-    );
-  }
-}
-
-class TitleText extends StatelessWidget {
-  const TitleText({super.key, required this.title});
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      textAlign: TextAlign.start,
-      style: StyleManager.textStyle16.copyWith(
-        color: ColorManager.secandry,
       ),
     );
-  }
-}
-
-class PriceText extends StatelessWidget {
-  const PriceText({super.key, required this.price});
-  final String? price;
-  @override
-  Widget build(BuildContext context) {
-    return Text(price! + r"$ /person");
   }
 }

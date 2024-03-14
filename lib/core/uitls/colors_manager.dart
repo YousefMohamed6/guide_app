@@ -11,5 +11,8 @@ abstract class ColorManager {
   static const Color selectedContainer = Color(0xff869CC3);
   static const Color unSelectedContainer = Color(0xffD9D9D9);
   static const Color addressColor = Color(0xff63687A);
-  static const Color hartBackgroundColor = Color(0xffD9D9D9);
+  static const Color grey = Color(0xffD9D9D9);
+  static const Color dateContainer = Color(0xffE4E4E4);
+  static const Color ofWhite = Color(0xffF6F6F6);
+  
 }
